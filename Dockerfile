@@ -26,7 +26,7 @@ RUN yum -y install epel-release && \
 # Install Erlang
 RUN wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm && \
     rpm -Uvh erlang-solutions-1.0-1.noarch.rpm && \
-    yum install esl-erlang
+    yum -y install esl-erlang
 
 # Install Elixir
 RUN mkdir /opt/elixir && \
