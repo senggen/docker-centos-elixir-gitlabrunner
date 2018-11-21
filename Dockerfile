@@ -5,7 +5,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 RUN localedef -i en_US -f UTF-8 en_US.UTF-8 && locale
 
-RUN yum install epel-release && \
+RUN yum -y install epel-release && \
     yum -y update && \
     yum -y upgrade && \
     yum -y install \
@@ -19,7 +19,8 @@ RUN yum install epel-release && \
         wxBase.x86_64 \
         wget \
         git && \
-    yum clean all
+    yum clean all && \
+    rm -rf /var/cache/yum
 
 
 # Install Erlang
