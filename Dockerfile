@@ -1,7 +1,6 @@
 FROM senggen/centos-elixir
 
-RUN yum check-update && \
-    curl -fsSL https://get.docker.com/ | sh && \
+RUN curl -fsSL https://get.docker.com/ | sh && \
     systemctl enable docker && \
     yum clean all
 
