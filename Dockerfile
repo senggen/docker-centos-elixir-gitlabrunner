@@ -14,5 +14,8 @@ RUN curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runne
     # cat ~/.ssh/id_rsa.pub
 
 VOLUME ["/etc/gitlab-runner", "/etc/gitlab-runner"]
-ENTRYPOINT ["/usr/bin/dumb-init", "gitlab-ci-multi-runner"]
-CMD ["run", "--user=root", "--working-directory=/home/gitlab-runner"]
+ADD run.sh /home
+RUN chmod +x /home/run.sh
+
+WORKDIR /home/gitlab-runner
+CMD /home/run.sh
