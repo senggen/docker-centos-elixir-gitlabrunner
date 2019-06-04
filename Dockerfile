@@ -1,5 +1,7 @@
 FROM senggen/centos-elixir
 
+RUN yum install sqlite-devel -y
+
 RUN curl -fsSL https://get.docker.com/ | sh && \
     systemctl enable docker && \
     yum clean all
