@@ -16,9 +16,9 @@ RUN set -xe \
   && make install clean
 
 # for yzd
-RUN apt -y update && \
-    apt -y upgrade && \
-    apt -y install sqlite-devel curl 
+RUN apt-get -y update && \
+    apt-get -y upgrade && \
+    apt-get -y install sqlite-devel 
 
 # install dumb-init
 ADD https://github.com/Yelp/dumb-init/releases/download/v1.0.2/dumb-init_1.0.2_amd64 /usr/bin/dumb-init
