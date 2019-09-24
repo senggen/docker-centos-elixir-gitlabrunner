@@ -15,11 +15,6 @@ RUN set -xe \
   && cd /usr/local/src/elixir \
   && make install clean
 
-# for yzd
-RUN apt-get -y update && \
-    apt-get -y upgrade && \
-    apt-get -y install sqlite-devel 
-
 # install dumb-init
 ADD https://github.com/Yelp/dumb-init/releases/download/v1.0.2/dumb-init_1.0.2_amd64 /usr/bin/dumb-init
 RUN chmod +x /usr/bin/dumb-init
