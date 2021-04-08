@@ -6,7 +6,7 @@ RUN chmod +x /usr/bin/dumb-init
 
 # Gitlab Runner
 RUN curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh | bash && \
-    yum -y install gitlab-runner && \
+    yum -y install gitlab-runner rsync wget && \
     yum clean all
 
 WORKDIR /home/gitlab-runner
